@@ -1,8 +1,11 @@
 package aplicacion;
 
+import dao.ProductoDAO;
 import dao.UsuarioDAO;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
+import pojos.Producto;
 import pojos.Usuario;
 import util.HibernateUtil;
 
@@ -31,11 +34,17 @@ public class Aplicacion {
 //        HibernateUtil.getSessionFactory().close();
 
 
-        UsuarioDAO ud = new UsuarioDAO();
-        List<Usuario> lista = ud.obtenerListado();
-        System.out.println("Listado de usuarios...");
-        for(Usuario elemento: lista){
-            System.out.println(elemento.toString());
+        Usuario u;
+        u = UsuarioDAO.leer("jtdoe78@gmail.com");
+        System.out.println(u.toString());
+        ArrayList<Producto> productos = (ArrayList<Producto>)ProductoDAO.obtenerListado();
+        for(Producto elemento: productos){
+            System.out.println(elemento);
         }
+//        List<Usuario> lista = ud.obtenerListado();
+//        System.out.println("Listado de usuarios...");
+//        for(Usuario elemento: lista){
+//            System.out.println(elemento.toString());
+//        }
     }
 }

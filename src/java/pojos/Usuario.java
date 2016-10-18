@@ -7,11 +7,11 @@ public class Usuario {
     private String mail;
     private String nombre;
     private String pass;
+    private String tipo;
     
     public Usuario(){}
-    public Usuario(String mail, String nombre, String psw){
+    public Usuario(String mail, String psw){
         this.mail = mail;
-        this.nombre = nombre;
         this.pass = psw;
     }
     
@@ -24,6 +24,9 @@ public class Usuario {
     public void setPass(String x){
         this.pass =  x;
     }
+    public void setTipo(String x){
+        this.tipo = x;
+    }
     public String getMail(){
         return mail;
     }
@@ -33,10 +36,13 @@ public class Usuario {
     public String getPass(){
         return pass;
     }
+    public String getTipo(){
+        return tipo;
+    }
 
     @Override
     public String toString() {
-        return getNombre() + ", " + getMail() + ", " + getPass();
+        return getNombre() + ", " + getMail() + ", " + getPass() + " tipo: " + getTipo();
     }
     
     

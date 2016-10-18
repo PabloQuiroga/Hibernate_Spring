@@ -4,13 +4,14 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import pojos.Producto;
 import pojos.Usuario;
 import util.HibernateUtil;
 
 /**
  * @author Pablo Daniel Quiroga
  */
-public class UsuarioDAO{
+public class ProductoDAO {
     private static Session session;
     
     private static void iniciar(){
@@ -26,65 +27,65 @@ public class UsuarioDAO{
         terminar();
     }
     
-    public static void guardar(Usuario u){
+    public static void guardar(Producto p){
         iniciar();
         try{
-            session.save(u);
+            session.save(p);
             session.getTransaction().commit();
             terminar();
         }catch(HibernateException ex){
             manejaException(ex);
         }
     }
-    public static Usuario leer(String email){
-        Usuario u = null;
+    public static Producto leer(int cod){
+        Producto p = null;
         
         iniciar();
-        Query query = session.getNamedQuery("GET_USUARIO_BY_MAIL");
-        query.setString("mail", email);
+        Query query = session.getNamedQuery("GET_PRODUCTO_BY_CODIGO");
+        query.setInteger("codigo", cod);
         try{
-            u = (Usuario) query.uniqueResult();
+            p = (Producto) query.uniqueResult();
             terminar();
         }catch(HibernateException ex){
             manejaException(ex);
         }
-        return u;
+        return p;
     }
-    public static void actualizar(Usuario u){
+    public static void actualizar(Producto p){
         iniciar();
         try{
-            session.update(u);
+            session.update(p);
             session.getTransaction().commit();
             terminar();
         }catch(HibernateException ex){
             manejaException(ex);
         }
     }
-    public static void borrar(Usuario u){
+    public static void borrar(Producto p){
         iniciar();
         try{
-            session.delete(u);
+            session.delete(p);
             session.getTransaction().commit();
             terminar();
         }catch(HibernateException ex){
             manejaException(ex);
         }
     }
-    public static void guardar_o_actualizar(Usuario u){
+    public static void guardar_o_actualizar(Producto p){
         iniciar();
         try{
-            session.saveOrUpdate(u);
+            session.saveOrUpdate(p);
             session.getTransaction().commit();
             terminar();
         }catch(HibernateException ex){
             manejaException(ex);
         }
     }
-    public static List<Usuario> obtenerListado(){
-        List<Usuario> listado = null;
+    public static List<Producto> obtenerListado(){
+        List<Producto> listado = null;
         
         iniciar();
-        Query query = session.getNamedQuery("GET_ALL_USUARIOS");
+        Query query = session.getNamedQuery("GET_ALL PRODUCTOS");
         try{
             listado = query.list();
             terminar();
@@ -93,12 +94,12 @@ public class UsuarioDAO{
         }
         return listado;
     }
-    public static List<Usuario> busquedaPorNombre(String nick){
-        List<Usuario> listado = null;
+    public static List<Producto> busquedaPorNombre(String name){
+        List<Producto> listado = null;
         
         iniciar();
-        Query query = session.getNamedQuery("GET_USUARIO_BY_NOMBRE");
-        query.setString("nombre", nick);
+        Query query = session.getNamedQuery("GET_PRODUCTO_BY_NOMBRE");
+        query.setString("nombre", name);
         try{
             listado = query.list();
             terminar();
@@ -107,11 +108,11 @@ public class UsuarioDAO{
         }
         return listado;
     }
-    public static List<Usuario> busquedaPorTipo(String type){
-        List<Usuario> listado = null;
+    public static List<Producto> busquedaPorTipo(String type){
+        List<Producto> listado = null;
         
         iniciar();
-        Query query = session.getNamedQuery("GET_USUARIO_BY_TIPO");
+        Query query = session.getNamedQuery("GET_PRODUCTO_BY_TIPO");
         query.setString("tipo", type);
         try{
             listado = query.list();

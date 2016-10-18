@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <query name="GET_ALL_USUARIOS">SELECT u FROM Usuario u</query>
+    <query name="GET_USUARIO_BY_MAIL">
+        SELECT u FROM Usuario u WHERE mail = :mail
+    </query>
+    <query name="GET_USUARIO_BY_NOMBRE">
+        SELECT u FROM Usuario u WHERE nombre = :nombre
+    </query>
+    <query name="GET_USUARIO_BY_TIPO">
+        SELECT u FROM Usuario u WHERE tipo = :tipo
+    </query>
+    
+    <query name="GET_ALL PRODUCTOS">SELECT p FROM Producto p</query>
+    <query name="GET_PRODUCTO_BY_CODIGO">
+        SELECT p FROM Producto p WHERE codigo = :codigo
+    </query>
+    <query name="GET_PRODUCTO_BY_NOMBRE">
+        SELECT p FROM Producto p WHERE nombre = :nombre
+    </query>
+    <query name="GET_PRODUCTO_BY_TIPO">
+        SELECT p FROM Producto p WHERE tipo = :tipo
+    </query>
+</hibernate-mapping>
