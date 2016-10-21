@@ -5,7 +5,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import pojos.Producto;
-import pojos.Usuario;
 import util.HibernateUtil;
 
 /**

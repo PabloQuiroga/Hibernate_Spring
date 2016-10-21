@@ -34,12 +34,16 @@ public class Aplicacion {
 //        HibernateUtil.getSessionFactory().close();
 
 
-        Usuario u;
-        u = UsuarioDAO.leer("jtdoe78@gmail.com");
-        System.out.println(u.toString());
+//        Usuario u;
+//        u = UsuarioDAO.leer("jtdoe78@gmail.com");
+//        System.out.println(u.toString());
         ArrayList<Producto> productos = (ArrayList<Producto>)ProductoDAO.obtenerListado();
-        for(Producto elemento: productos){
-            System.out.println(elemento);
+        if(productos.size() > 0){
+            for(Producto elemento: productos){
+                System.out.println(elemento);
+            }
+        }else{
+            System.out.println("listado vacio");
         }
 //        List<Usuario> lista = ud.obtenerListado();
 //        System.out.println("Listado de usuarios...");

@@ -6,7 +6,6 @@
         <id column="codigo" name="codigo" access="field" />
         <property column="nombre" name="nombre" access="field" />
         <property column="tipo" name="tipo" access="field" />
-        <property column="subtipo" name="subtipo" access="field" />
         <property column="unidad_venta" name="unidad_venta" access="field" />
         <property column="precio" name="precio" access="field" />
         <property column="cantidad" name="cantidad" access="field" />

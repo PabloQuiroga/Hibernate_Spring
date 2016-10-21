@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba - Productos</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../css/estiloBase.css">
+        <link rel="stylesheet" href="../../css/forms.css" >
+    </head>
+    <body>
+        <div id="agrupar">
+            <header id="cabecera">
+                <h1>Supermercado Prueba</h1>
+            </header>
+            <nav id="menu">
+                <ul>
+                    <li>Ofertas
+                        <ul>
+                            <li>Mostrar</li>
+                            <li id="agregarOferta">Agregar</li>
+                        </ul>
+                    </li>
+                    <li id="menuUsuarios">Usuarios
+                        <ul>
+                            <li>Busqueda</li>
+                            <li>Agregar</li>
+                        </ul>
+                    </li>
+                    <li>Productos
+                        <ul>
+                            <li id="AltaProducto">Alta</li>
+                            <li>Busqueda</li>
+                        </ul>
+                    </li>
+                    <li id="proveedores">Proveedores
+                        <ul>
+                            <li>Busqueda</li>
+                            <li>Agregar</li>
+                        </ul>
+                    </li>
+                    <li>Volver</li>
+                </ul>
+            </nav>
+            <section id="seccion">
+                    <form method="get" action="" >
+                        <div class="titulo">
+                            <h3>Alta de Producto</h3>
+                        </div>
+                        <div>
+                            <label>Nombre</label> 
+                            <input type="text" name="name" id="name" required="required" autofocus>
+                        </div>
+                        <div>
+                            <label>tipo</label>
+                            <input type="text" name="tipoP" id="tipo" >
+                        </div>
+                        <div>
+                            <label>Precio</label>
+                            <input type="number" step="any" name="prize" >
+                        </div>
+                        <div>
+                            <label>Cantidad</label>
+                            <input type="number" name="cant" >
+                        </div>
+                        <div class="button">
+                            <input type="submit" name="submit" value="Cargar" id="submit" >
+                        </div>
+                    </form>
+            </section>
+            <footer></footer>
+        </div>
+    </body>
+</html>
