@@ -1,2 +1,2 @@
-# Hibernate_Spring
-pruebas Hibernate y Spring
+# Probando Hibernate
+pruebas Hibernate con HTML5
